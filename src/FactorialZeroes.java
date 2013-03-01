@@ -2,12 +2,11 @@
 public class FactorialZeroes {
 	
 	public int trailingZeroes(int src) {
-		int output = 0;					// number of trailing zeroes
-		long total = 1;
-		for(int i=2 ; i<=src ; i++) {
-			total *= i;
-			while(total%10 == 0) {
-				total /= 10;
+		int output = 0;					// number of factors of 5
+		for(int i=5 ; i<=src ; i++) {
+			int tmp = i;
+			while(tmp % 5 == 0) {
+				tmp /= 5;
 				output++;
 			}
 		}
@@ -20,7 +19,7 @@ public class FactorialZeroes {
 	}
 	
 	public void launch() {
-		int src = 40;
+		int src = 123456789;
 		System.out.println(src + "! has " + trailingZeroes(src) + " trailing zeroes.");
 	}
 }
